@@ -1,27 +1,24 @@
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Bani's Network</title>
-
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #080808;
             color: white;
         }
-
         /* NAVIGATION */
-
         nav {
             position: fixed;
             top: 0;
@@ -35,29 +32,23 @@
             z-index: 1000;
             border-bottom: 1px solid #222;
         }
-
         .logo {
             font-size: 24px;
             font-weight: bold;
         }
-
         .logo span {
             color: #ffcc00;
         }
-
         nav a {
             color: #aaa;
             text-decoration: none;
             margin-left: 25px;
             transition: 0.3s;
         }
-
         nav a:hover {
             color: #ffcc00;
         }
-
         /* HERO */
-
         .hero {
             min-height: 100vh;
             display: flex;
@@ -65,26 +56,22 @@
             align-items: center;
             text-align: center;
             padding: 100px 20px 50px;
-
             background:
                 radial-gradient(circle at center, #252000 0%, #080808 55%);
         }
-
         .hero h1 {
             font-size: clamp(45px, 9vw, 90px);
             margin-bottom: 20px;
         }
-
         .hero h1 span {
             color: #ffcc00;
         }
-
         .hero p {
             color: #aaa;
             font-size: 20px;
             margin-bottom: 35px;
         }
-
+        /* IP */
         .ip {
             display: inline-block;
             background: #151515;
@@ -94,7 +81,7 @@
             margin-bottom: 25px;
             font-size: 18px;
         }
-
+        /* BUTTONS */
         .buttons a {
             display: inline-block;
             padding: 14px 25px;
@@ -104,51 +91,88 @@
             font-weight: bold;
             transition: 0.3s;
         }
-
         .primary {
             background: #ffcc00;
             color: #000;
         }
-
         .primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 25px #ffcc00;
         }
-
         .secondary {
             background: #1c1c1c;
             color: white;
             border: 1px solid #333;
         }
-
         .secondary:hover {
             background: #292929;
         }
-
+        /* SERVER STATUS */
+        .status-box {
+            width: min(500px, 90%);
+            margin: 35px auto 0;
+            padding: 25px;
+            background: rgba(17, 17, 17, 0.9);
+            border: 1px solid #292929;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        }
+        .status-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        .status {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .online {
+            color: #55ff55;
+        }
+        .offline {
+            color: #ff5555;
+        }
+        .checking {
+            color: #ffcc00;
+        }
+        .players {
+            color: #aaa;
+            font-size: 16px;
+        }
+        .status-ip {
+            margin-top: 12px;
+            color: #777;
+            font-size: 14px;
+        }
+        .dot {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            margin-right: 8px;
+            background: currentColor;
+            box-shadow: 0 0 12px currentColor;
+        }
         /* SECTIONS */
-
         section {
             padding: 90px 8%;
         }
-
         .title {
             text-align: center;
             font-size: 40px;
             margin-bottom: 50px;
         }
-
         .title span {
             color: #ffcc00;
         }
-
         /* MODES */
-
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
         }
-
         .card {
             background: #111;
             border: 1px solid #252525;
@@ -157,60 +181,46 @@
             text-align: center;
             transition: 0.3s;
         }
-
         .card:hover {
             transform: translateY(-8px);
             border-color: #ffcc00;
         }
-
         .card .icon {
             font-size: 50px;
             margin-bottom: 20px;
         }
-
         .card h3 {
             font-size: 24px;
             margin-bottom: 12px;
         }
-
         .card p {
             color: #999;
             line-height: 1.6;
         }
-
         /* RANKS */
-
         .rank {
             text-align: center;
         }
-
         .rank h3 {
             margin-bottom: 15px;
         }
-
         .rank.member h3 {
             color: #aaa;
         }
-
         .rank.supporter h3 {
             color: #55ff55;
         }
-
         .rank.admin h3 {
             color: #55aaff;
         }
-
         .rank.owner h3 {
             color: #ff5555;
         }
-
         /* RULES */
-
         .rules {
             max-width: 800px;
             margin: auto;
         }
-
         .rule {
             background: #111;
             border: 1px solid #222;
@@ -218,52 +228,40 @@
             margin-bottom: 12px;
             border-radius: 10px;
         }
-
         .rule span {
             color: #ffcc00;
             font-weight: bold;
         }
-
         /* FOOTER */
-
         footer {
             text-align: center;
             padding: 35px;
             border-top: 1px solid #222;
             color: #777;
         }
-
         footer strong {
             color: #ffcc00;
         }
-
         /* MOBILE */
-
         @media (max-width: 600px) {
             nav {
                 padding: 15px 20px;
             }
-
             nav div:last-child {
                 display: none;
             }
-
             section {
                 padding: 70px 20px;
             }
         }
     </style>
 </head>
-
 <body>
-
 <!-- NAVIGATION -->
-
 <nav>
     <div class="logo">
         Bani's <span>Network</span>
     </div>
-
     <div>
         <a href="#home">Start</a>
         <a href="#modes">Spielmodi</a>
@@ -271,56 +269,53 @@
         <a href="#rules">Regeln</a>
     </div>
 </nav>
-
-
 <!-- STARTSEITE -->
-
 <section class="hero" id="home">
-
     <div>
-
         <h1>
             Bani's <span>Network</span>
         </h1>
-
         <p>
             Dein Minecraft-Abenteuer beginnt hier.
         </p>
-
         <div class="ip">
             🎮 banisnetwork.playserver.pro
         </div>
-
         <div class="buttons">
-
             <a class="primary"
                href="minecraft://?addExternalServer=Bani's%20Network|banisnetwork.playserver.pro:25565">
                 Server beitreten
             </a>
-
             <a class="secondary"
                href="https://discord.gg/sUAkt2sSF"
                target="_blank">
                 💬 Discord
             </a>
-
         </div>
-
+        <!-- LIVE SERVER STATUS -->
+        <div class="status-box">
+            <div class="status-title">
+                🎮 SERVER STATUS
+            </div>
+            <div id="serverStatus" class="status checking">
+                <span class="dot"></span>
+                Server wird geprüft...
+            </div>
+            <div id="playerCount" class="players">
+                Bitte kurz warten...
+            </div>
+            <div class="status-ip">
+                banisnetwork.playserver.pro
+            </div>
+        </div>
     </div>
-
 </section>
-
-
 <!-- SPIELMODI -->
-
 <section id="modes">
-
     <h2 class="title">
         Unsere <span>Spielmodi</span>
     </h2>
-
     <div class="cards">
-
         <div class="card">
             <div class="icon">🛏️</div>
             <h3>BedWars</h3>
@@ -329,7 +324,6 @@
                 und werde zum letzten Team.
             </p>
         </div>
-
         <div class="card">
             <div class="icon">🌲</div>
             <h3>Survival</h3>
@@ -338,7 +332,6 @@
                 Welt mit anderen Spielern.
             </p>
         </div>
-
         <div class="card">
             <div class="icon">🌌</div>
             <h3>Coming Soon</h3>
@@ -347,29 +340,20 @@
                 sind bereits in Planung.
             </p>
         </div>
-
     </div>
-
 </section>
-
-
 <!-- RÄNGE -->
-
 <section id="ranks">
-
     <h2 class="title">
         Unsere <span>Ränge</span>
     </h2>
-
     <div class="cards">
-
         <div class="card rank member">
             <h3>MEMBER</h3>
             <p>
                 Der Standard-Rang für unsere Spieler.
             </p>
         </div>
-
         <div class="card rank supporter">
             <h3>SUPPORTER</h3>
             <p>
@@ -377,7 +361,6 @@
                 besondere Vorteile.
             </p>
         </div>
-
         <div class="card rank admin">
             <h3>ADMIN</h3>
             <p>
@@ -385,61 +368,84 @@
                 und die Community.
             </p>
         </div>
-
         <div class="card rank owner">
             <h3>OWNER</h3>
             <p>
                 Die Serverleitung von Bani's Network.
             </p>
         </div>
-
     </div>
-
 </section>
-
-
 <!-- REGELN -->
-
 <section id="rules">
-
     <h2 class="title">
         Server <span>Regeln</span>
     </h2>
-
     <div class="rules">
-
         <div class="rule">
             <span>01</span> Kein Cheaten oder Hacken.
         </div>
-
         <div class="rule">
             <span>02</span> Kein Griefing oder unnötiges Trollen.
         </div>
-
         <div class="rule">
             <span>03</span> Respektiere andere Spieler.
         </div>
-
         <div class="rule">
             <span>04</span> Keine Beleidigungen oder Spam.
         </div>
-
         <div class="rule">
             <span>05</span> Habt Spaß auf Bani's Network! ❤️
         </div>
-
     </div>
-
 </section>
-
-
 <!-- FOOTER -->
-
 <footer>
     © 2026 <strong>Bani's Network</strong> · Minecraft Server
 </footer>
-
-
+<!-- LIVE STATUS SCRIPT -->
+<script>
+const serverIP = "banisnetwork.playserver.pro";
+async function updateServerStatus() {
+    const statusElement = document.getElementById("serverStatus");
+    const playerElement = document.getElementById("playerCount");
+    try {
+        const response = await fetch(
+            `https://api.mcstatus.io/v2/status/java/${serverIP}?query=false`
+        );
+        if (!response.ok) {
+            throw new Error("API Fehler");
+        }
+        const data = await response.json();
+        if (data.online) {
+            statusElement.className = "status online";
+            statusElement.innerHTML =
+                '<span class="dot"></span> Server Online';
+            const onlinePlayers =
+                data.players?.online ?? 0;
+            const maxPlayers =
+                data.players?.max ?? 0;
+            playerElement.innerHTML =
+                `👥 ${onlinePlayers} / ${maxPlayers} Spieler online`;
+        } else {
+            statusElement.className = "status offline";
+            statusElement.innerHTML =
+                '<span class="dot"></span> Server Offline';
+            playerElement.innerHTML =
+                "😴 Der Server ist momentan nicht erreichbar.";
+        }
+    } catch (error) {
+        statusElement.className = "status offline";
+        statusElement.innerHTML =
+            '<span class="dot"></span> Status nicht verfügbar';
+        playerElement.innerHTML =
+            "⚠️ Der Serverstatus konnte momentan nicht geladen werden.";
+    }
+}
+/* Beim Laden prüfen */
+updateServerStatus();
+/* Alle 30 Sekunden aktualisieren */
+setInterval(updateServerStatus, 30000);
+</script>
 </body>
 </html>
-```
